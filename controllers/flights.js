@@ -1,8 +1,8 @@
 const Flight = require("../models/flight");
 
-module.exports = { get, new: newFlight, create };
+module.exports = { index, new: newFlight, create };
 
-function get(req, res) {
+function index(req, res) {
   res.render("flights/index");
 }
 
