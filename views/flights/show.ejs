@@ -7,7 +7,7 @@
     <div>flightNo:</div>
     <div><%= flight.flightNo %> </div>
     <div>departs:</div>
-    <div><%= flight.departs %> </div>
+    <div><%= flight.departs.toLocaleDateString() %> </div>
 </section>
 <br><br><h2>Destinations:</h2>
 <form id="add-destination-form" action="/flights/<%= flight._id %>/destinations" method="POST">
@@ -35,7 +35,7 @@
             <% flight.destinations.forEach(function(destination) {   %> 
                 <tr>
                     <td><%= destination.airport %> </td>
-                    <td><%= destination.arrival %> </td>
+                    <td><%= destination.arrival.toLocaleDateString() %> </td>
                 </tr>
             <% }); %> 
         </tbody>
