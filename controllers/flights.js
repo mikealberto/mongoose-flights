@@ -9,7 +9,7 @@ function index(req, res) {
 }
 
 function newFlight(req, res) {
-  res.render("flights/new");
+  res.render("flights/new", { title: "New Flight" });
 }
 
 //Note: we are not compromising seperation of concerns ;
