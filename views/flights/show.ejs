@@ -1,5 +1,5 @@
 <%- include("../partials/header") %> 
-<section>
+<section id="show-page">
     <div>Airline:</div>
     <div><%= flight.airline %> </div> 
     <div>Airport:</div>
@@ -9,4 +9,18 @@
     <div>departs:</div>
     <div><%= flight.departs %> </div>
 </section>
+<br><br><h2>Destinations:</h2>
+<form id="add-destination-form" action="/flights/<%= flight._id %>/destinations" method="POST">
+    <label>Destination:</label>
+    <select name="airport">
+        <option value="AUS">AUS</option>
+        <option value="DFW">DFW</option>
+        <option value="DEN">DEN</option>
+        <option value="LAX">LAX</option>
+        <option value="SAN">SAN</option>
+    </select> <br>
+    <label>Arrival Date:</label>
+    <input type="datetime-local" name="arrival"> <br>
+    <input type="submit" value="Add Flight">
+</form>
 <%- include("../partials/footer") %> 
