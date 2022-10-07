@@ -23,4 +23,24 @@
     <input type="datetime-local" name="arrival"> <br>
     <input type="submit" value="Add Flight">
 </form>
+<% if (flight.destinations.length) { %> 
+    <table>
+        <thead>
+            <tr>
+                <th>Airport</th>
+                <th>Arrival</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% flight.destinations.forEach(function(destination) {   %> 
+                <tr>
+                    <td><%= destination.airport %> </td>
+                    <td><%= destination.arrival %> </td>
+                </tr>
+            <% }); %> 
+        </tbody>
+    </table>
+<% } else { %> 
+    <h5>No Destinations Yet Available</h5>
+<% } %> 
 <%- include("../partials/footer") %> 
