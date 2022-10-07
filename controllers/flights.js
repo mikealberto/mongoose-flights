@@ -1,6 +1,6 @@
 const Flight = require("../models/flight");
 
-module.exports = { index, new: newFlight, create };
+module.exports = { index, new: newFlight, create, show };
 
 function index(req, res) {
   Flight.find({}, function (err, flights) {
@@ -28,4 +28,9 @@ function create(req, res) {
     console.log(req.body);
     res.redirect("/flights");
   });
+}
+
+function show(req, res) {
+  res.render("flights/show", {title: "Flight Detail"})
+
 }
