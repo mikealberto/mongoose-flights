@@ -31,6 +31,8 @@ function create(req, res) {
 }
 
 function show(req, res) {
-  res.render("flights/show", {title: "Flight Detail"})
+  Flight.findById(req.params.id, function(err, flight) {
+    res.render("flights/show", {flight, title: "Flight Detail"})
+  });
 
 }
