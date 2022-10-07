@@ -28,4 +28,6 @@ const flightSchema = new Schema(
   }
 );
 
+//schema is where we write the rules that we are going to pass to a model
+//compiling a schema into a model
 module.exports = mongoose.model("Flight", flightSchema);
