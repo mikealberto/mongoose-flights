@@ -1,2 +1,6 @@
 const Ticket = require("../models/ticket");
-module.exports = {};
+module.exports = {new: newTicket};
+
+function newTicket (req, res) {
+    res.render("tickets/new");
+}
