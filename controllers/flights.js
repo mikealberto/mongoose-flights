@@ -26,7 +26,7 @@ function create(req, res) {
     // with /flights in the address bar
     if (err) return res.redirect("/flights/new");
     console.log(req.body);
-    res.redirect("/flights");
+    res.redirect(`/flights/${flight._id}`);
   });
 }
 
