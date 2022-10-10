@@ -1,4 +1,5 @@
 const Flight = require("../models/flight");
+const Ticket = require("../models/ticket");
 
 module.exports = { index, new: newFlight, create, show };
 
@@ -30,9 +31,16 @@ function create(req, res) {
   });
 }
 
+// function show(req, res) {
+//   Flight.findById(req.params.id, function(err, flight) {
+//     res.render("flights/show", {flight, title: "Flight Detail"})
+//   });
+// }
 function show(req, res) {
   Flight.findById(req.params.id, function(err, flight) {
-    res.render("flights/show", {flight, title: "Flight Detail"})
+    Ticket.find({flight: flight._id}, function(err, tickets) {
+      console.log(tickets); //DELETE
+      res.render('flights/show', {title:"Flight Detail", flight, tickets});
+    });
   });
-
 }
