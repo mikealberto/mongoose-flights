@@ -8,6 +8,9 @@ function newTicket (req, res) {
 }
 
 function create(req, res) {
+    req.body.flight = req.params.id;
     console.log(req.body) //DELETE
-    res.redirect(`/flights/${req.params.id}`);
+    Ticket.create(req.body, function(err, ticket) {
+        res.redirect(`/flights/${req.params.id}`);
+    });
 }
